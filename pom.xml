@@ -1,58 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.vulnerable</groupId>
     <artifactId>app</artifactId>
     <version>1.0-SNAPSHOT</version>
-
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
-
     <dependencies>
-        <!-- CRITICAL: Log4Shell (CVE-2021-44228) -->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.14.1</version>
-        </dependency>
-
-        <!-- CRITICAL: Spring4Shell (CVE-2022-22965) -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>5.3.17</version>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>5.3.17</version>
-        </dependency>
-
-        <!-- HIGH: Jackson Deserialization (CVE-2022-42003) -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.13.3</version>
-        </dependency>
-
-        <!-- CRITICAL: Fastjson RCE (CVE-2022-25845) -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.80</version>
-        </dependency>
-
-        <!-- CRITICAL: SnakeYaml RCE (CVE-2022-1471) -->
-        <dependency>
-            <groupId>org.yaml</groupId>
-            <artifactId>snakeyaml</artifactId>
-            <version>1.31</version>
-        </dependency>
+        <!-- Log4Shell (CVE-2021-44228) -->
+        <dependency><groupId>org.apache.logging.log4j</groupId><artifactId>log4j-core</artifactId><version>2.14.1</version></dependency>
+        <!-- Spring4Shell (CVE-2022-22965) -->
+        <dependency><groupId>org.springframework</groupId><artifactId>spring-core</artifactId><version>5.3.17</version></dependency>
+        <dependency><groupId>org.springframework</groupId><artifactId>spring-webmvc</artifactId><version>5.3.17</version></dependency>
+        <!-- Jackson Deserialization RCE -->
+        <dependency><groupId>com.fasterxml.jackson.core</groupId><artifactId>jackson-databind</artifactId><version>2.9.10</version></dependency>
+        <!-- Fastjson RCE -->
+        <dependency><groupId>com.alibaba</groupId><artifactId>fastjson</artifactId><version>1.2.68</version></dependency>
+        <!-- SnakeYaml RCE -->
+        <dependency><groupId>org.yaml</groupId><artifactId>snakeyaml</artifactId><version>1.29</version></dependency>
+        <!-- Struts 2 RCE (CVE-2017-5638) -->
+        <dependency><groupId>org.apache.struts</groupId><artifactId>struts2-core</artifactId><version>2.3.31</version></dependency>
+        <!-- ActiveMQ RCE (CVE-2023-46604) -->
+        <dependency><groupId>org.apache.activemq</groupId><artifactId>activemq-client</artifactId><version>5.15.15</version></dependency>
+        <!-- XStream RCE (CVE-2021-39144) -->
+        <dependency><groupId>com.thoughtworks.xstream</groupId><artifactId>xstream</artifactId><version>1.4.17</version></dependency>
+        <!-- Shiro Authentication Bypass (CVE-2020-11989) -->
+        <dependency><groupId>org.apache.shiro</groupId><artifactId>shiro-core</artifactId><version>1.5.2</version></dependency>
+        <!-- Commons Collections Deserialization (CVE-2015-7501) -->
+        <dependency><groupId>commons-collections</groupId><artifactId>commons-collections</artifactId><version>3.2.1</version></dependency>
     </dependencies>
 </project>
